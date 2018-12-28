@@ -42,7 +42,7 @@ docker run -it -e "ContractFuzzer=/contractFuzzer/ContractFuzzer"  ContractFuzze
 2. The contract's bin file provided
 3. The contract has been deployed to the Private Chain
 
-How to deploy a contract to Private Chain can be found [here](/how-to-deploy-a-contract.md).
+How to deploy a contract to Private Chain can be found [here](./how-to-deploy-a-contract.md).
 
 The tested contract's directory tree would be like below, similiar to that of the example contracts we provided.
 ```
