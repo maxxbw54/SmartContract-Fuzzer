@@ -13,7 +13,13 @@
 
 ```docker build -t golang_nodejs:v1-ly .```
 
-4. contractfuzzer/deployer
+4. contractfuzzer/geth
+
+	1. ```docker build -f geth.Dockerfile -t contractfuzzer/geth .```
+
+	2. ```docker run -it --name contractfuzzer_geth contractfuzzer/geth:latest```
+
+5. contractfuzzer/deployer
 
 	1. make `deployer_run.sh` executable before build the image by ```chmod +x deployer_run.sh```.
 
@@ -26,7 +32,11 @@
 
 	4. ```docker build -f deploy.Dockerfile -t contractfuzzer/deployer .```
 
-5. contractfuzzer/contractfuzzer
+	5. ```docker create -it -e "ContractFuzzer=/contractFuzzer/deployer" --name contractfuzzer_deployer -v /home/bowen/Desktop/ContractFuzzer/SmartContract-Fuzzer/sources/ContractFuzzer-master/Ethereum:/ContractFuzzer/Ethereum -v /home/bowen/Desktop/ContractFuzzer/SmartContract-Fuzzer/data/contracts_to_deploy:/ContractFuzzer/contracts_to_deploy -e "ContractFuzzer=/contractFuzzer/deployer" contractfuzzer/deployer:latest```
+
+	6. run the examples ```docker start -it contractfuzzer_deployer```
+
+6. contractfuzzer/contractfuzzer
 
 	1. build the image ```docker build -t ContractFuzzer -f Dockerfile .```
 
