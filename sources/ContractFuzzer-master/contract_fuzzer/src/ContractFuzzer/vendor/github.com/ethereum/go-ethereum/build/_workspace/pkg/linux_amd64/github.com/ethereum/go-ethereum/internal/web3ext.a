@@ -1,0 +1,11 @@
+!<arch>
+__.PKGDEF       0           0     0     644     13418     `
+go object linux amd64 go1.8.7 X:framepointer
+build id "94961aff30b3c58448251fe8427a975d00d9f3d1"
+----
+
+build id "94961aff30b3c58448251fe8427a975d00d9f3d1"
+
+$$B
+version 3
+
