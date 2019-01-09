@@ -1,8 +1,8 @@
 {
     "contracts": [
         {
-            "home": "/ContractFuzzer/contract_deployer",
-            "childhome": "/examples",
+            "home": "/ContractFuzzer/contracts_to_deploy",
+            "childhome": "/config",
             "from": "0x2b71cc952c8e3dfe97a696cf5c5b29f8a07de3d8",
             "gas": "50000000000",
             "name": "UP1KToken",
@@ -14,5 +14,5 @@
     "gas": "50000000000",
     "home": "/ContractFuzzer/contract_deployer",
     "value": "1000000000",
-    "file_path": "/ContractFuzzer/contract_deployer/examples/config/UP1KToken.json"
+    "file_path": "/ContractFuzzer/contracts_to_deploy/config/UP1KToken.json"
 }
