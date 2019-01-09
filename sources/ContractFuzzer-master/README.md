@@ -31,8 +31,8 @@ and finally you will see results records file in directory  `/ContractFuzzer/exa
 
 
 ```
-docker build -t ContractFuzzer .
-docker run -it -e "ContractFuzzer=/contractFuzzer/ContractFuzzer"  ContractFuzzer:latest
+docker build -t contractfuzzer .
+docker run -it -e "contractfuzzer=/contractFuzzer/ContractFuzzer"  contractfuzzer:latest
 ```
 
 ## Evaluating Ethereum Contracts
@@ -101,7 +101,7 @@ Some details about the repository structure as following.
 2. `contract_deployer` is the tool to deploy contract easily for us.
 3. `contract_fuzzer` is one part of ContractFuzzer, which generates contract call messages based on contract's ABI definition;
 4.  `contract_tester` is one part of ContractFuzzer, which sends the contract call messages to our instrumented Geth client.
-5.  `go-ethereum-cf` is one part of ContractFuzzer, which instrumented the evm of Go-etheruem. And most codes added could be found under relative directory `core/vm`
+5.  `go-ethereum-cf` is one part of ContractFuzzer, which instrumented the evm of Go-etheruem. And most codes added could be found under relative directory `core/vm`.
 6.  `examples` here provides some cases for us to make sense of the tool quickly.
 7.  `base` here provides some fundamental dockerfiles. `golang, nodejs and their integreted enviroment.`
 

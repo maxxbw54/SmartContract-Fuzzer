@@ -1,3 +1,5 @@
 personal
 personal.listAccounts();
 personal.listAccounts;
+
+web3.eth.getBlock("0x31a349c968c0789eb0e8d4c0b990e9d6c3196f67")
