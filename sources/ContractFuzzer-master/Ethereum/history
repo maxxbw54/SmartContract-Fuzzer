@@ -3,3 +3,5 @@ personal.listAccounts();
 personal.listAccounts;
 
 web3.eth.getBlock("0x31a349c968c0789eb0e8d4c0b990e9d6c3196f67")
+web3.eth.getBlock("0x15d8ad373948694f02f7d4f342a48fb461e1020e")
+web3.eth.getCode("0x15d8ad373948694f02f7d4f342a48fb461e1020e")
