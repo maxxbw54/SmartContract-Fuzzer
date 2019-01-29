@@ -3,7 +3,6 @@ import re
 import sys
 import argparse
 import demjson
-import hashlib
 
 if sys.version_info < (3, 6):
     import sha3
