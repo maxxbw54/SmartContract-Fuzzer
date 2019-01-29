@@ -3,6 +3,7 @@ import re
 import sys
 import argparse
 import demjson
+from pathConfig import data_dir
 
 if sys.version_info < (3, 6):
     import sha3
@@ -105,16 +106,18 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     group = parser.add_argument_group('Model 1')
-    groupex = group.add_mutually_exclusive_group(required=True)
+    groupex = group.add_mutually_exclusive_group()
 
     groupex.add_argument("-c", "--sols", type=str, dest="contract",
                          help="set existing sols name for fetch fun sig map")
     groupex.add_argument("-a", "--all", help="handle all contracts in --abi_dir for  fetch all fun sig map",
                          action="store_true")
-    groupex2 = group.add_mutually_exclusive_group(required=True)
+    groupex2 = group.add_mutually_exclusive_group()
     groupex2.add_argument("-ad", "--abi_dir", type=str, dest="abi_dir",
                           help="set contracts' abis dir from where to get the #sols.abis and #sols specified by -c or by -a")
     args = parser.parse_args()
+    args.contract = "UP1KToken.abi"
+    args.abi_dir = os.path.join(data_dir, "contracts_to_detect", "verified_contract_abis")
     args.target_dir = os.path.join(os.sep.join(args.abi_dir.split(os.sep)[:-1]), 'verified_contract_abi_sig')
     if args.contract:
         if args.contract.find("."):

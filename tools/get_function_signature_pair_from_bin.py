@@ -1,6 +1,7 @@
 import os
 import sys
 import argparse
+from pathConfig import data_dir
 
 # fun_sig: <sig,sig_line_number>
 # Code_lines = ["JUMPI"]
@@ -111,7 +112,7 @@ def solve_file(bin_dir, bin_item):
     global args
     if not os.path.exists(args.target_dir):
         os.mkdir(args.target_dir)
-    disam_data_lines = os.popen('evm disasm ' + bin_dir + "/" + bin_item).readlines()
+    disam_data_lines = os.popen('evm disasm ' + bin_dir + os.sep + bin_item).readlines()
     Code_lines.clear()
     Jump_table.clear()
     try:
@@ -156,16 +157,18 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     group = parser.add_argument_group('Model 1')
-    groupex = group.add_mutually_exclusive_group(required=True)
+    groupex = group.add_mutually_exclusive_group()
 
     groupex.add_argument("-c", "--contract", type=str, dest="contract",
                          help="set the contract name whose function signature pair will be calculated")
     groupex.add_argument("-a", "--all", help="handle all contracts in directory specified by option '--bin_dir'",
                          action="store_true")
-    groupex2 = group.add_mutually_exclusive_group(required=True)
+    groupex2 = group.add_mutually_exclusive_group()
     groupex2.add_argument("-bd", "--bin_dir", type=str, dest="bin_dir",
                           help="set the contracts' bin directory where to get function signature pair")
     args = parser.parse_args()
+    args.contract = "UP1KToken.bin"
+    args.bin_dir = os.path.join(data_dir, "contracts_to_detect", "verified_contract_bins")
     args.target_dir = os.path.join(os.sep.join(args.bin_dir.split(os.sep)[:-1]), 'verified_contract_bin_sig')
     if args.contract:
         if args.contract.find("."):
