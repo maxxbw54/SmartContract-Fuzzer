@@ -1,7 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+   File Name：     ori_get_function_signature_pair_from_bin
+   Description :
+   Author :       bowenxu
+   date：          18/2/19
+-------------------------------------------------
+"""
+
 import os
 import sys
 import argparse
-from pathConfig import data_dir
 
 # fun_sig: <sig,sig_line_number>
 # Code_lines = ["JUMPI"]
@@ -91,7 +100,6 @@ def clearLines(lines):
                 runtime_part_line_no = line_no + 3
             break
     if runtime_part_line_no > 0:
-        print("%s" % lines[runtime_part_line_no].split(":"))
         delta = int(lines[runtime_part_line_no].split(":")[0])
         Code_lines = Code_lines[runtime_part_line_no:]
         lines = lines[runtime_part_line_no:]
@@ -111,9 +119,9 @@ def readFile(bin_file):
 
 def solve_file(bin_dir, bin_item):
     global args
-    if not os.path.exists(args.target_dir):
-        os.mkdir(args.target_dir)
-    disam_data_lines = os.popen('evm disasm ' + bin_dir + os.sep + bin_item).readlines()
+    if not os.path.exists("./sig"):
+        os.mkdir("./sig")
+    disam_data_lines = os.popen('evm disasm ' + bin_dir + "/" + bin_item).readlines()
     Code_lines.clear()
     Jump_table.clear()
     try:
@@ -135,7 +143,7 @@ def solve_file(bin_dir, bin_item):
         if len(sigs) > 0:
             D[fun_sig] = sigs
         if len(D) != 0:
-            with open(os.path.join(args.target_dir, bin_item + ".sig"), "w+") as f:
+            with open("./sig/" + bin_item + ".sig", "w+") as f:
                 for fun_sig in D:
                     print(fun_sig)
                     print(D[fun_sig])
@@ -158,19 +166,16 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     group = parser.add_argument_group('Model 1')
-    groupex = group.add_mutually_exclusive_group()
+    groupex = group.add_mutually_exclusive_group(required=True)
+
     groupex.add_argument("-c", "--contract", type=str, dest="contract",
                          help="set the contract name whose function signature pair will be calculated")
     groupex.add_argument("-a", "--all", help="handle all contracts in directory specified by option '--bin_dir'",
                          action="store_true")
-    groupex2 = group.add_mutually_exclusive_group()
+    groupex2 = group.add_mutually_exclusive_group(required=True)
     groupex2.add_argument("-bd", "--bin_dir", type=str, dest="bin_dir",
                           help="set the contracts' bin directory where to get function signature pair")
     args = parser.parse_args()
-    # path setting
-    args.contract = "UP1KToken.bin"
-    args.bin_dir = os.path.join(data_dir, "contracts_to_detect", "verified_contract_bins")
-    args.target_dir = os.path.join(os.sep.join(args.bin_dir.split(os.sep)[:-1]), 'verified_contract_bin_sig')
     if args.contract:
         if args.contract.find("."):
             args.contract = args.contract.split(".")[0] + ".bin"
@@ -185,4 +190,5 @@ def main():
 
 
 if __name__ == "__main__":
+    # test_file("./verified_contract_bins","TriWallet.bin")
     main()
