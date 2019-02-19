@@ -11,3 +11,5 @@ import os
 
 project_dir = "/home/bowen/Desktop/ContractFuzzer/SmartContract-Fuzzer"
 data_dir = os.path.join(project_dir, "data")
+
+tool_dir = os.path.join(project_dir, "utilities")
