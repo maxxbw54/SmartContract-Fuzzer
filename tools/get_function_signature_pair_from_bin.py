@@ -113,7 +113,8 @@ def solve_file(bin_dir, bin_item):
     global args
     if not os.path.exists(args.target_dir):
         os.mkdir(args.target_dir)
-    disam_data_lines = os.popen('evm disasm ' + bin_dir + os.sep + bin_item).readlines()
+    disam_data_lines = os.popen(
+        '/home/bowenxu/Downloads/geth-alltools-linux-amd64-1.7.0-6c6c7b2a/evm disasm ' + bin_dir + os.sep + bin_item).readlines()
     Code_lines.clear()
     Jump_table.clear()
     try:
