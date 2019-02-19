@@ -9,5 +9,5 @@
 """
 import os
 
-project_dir = "/home/bowenxu/Desktop/Research/SmartContract-Fuzzer"
+project_dir = "/home/bowen/Desktop/ContractFuzzer/SmartContract-Fuzzer"
 data_dir = os.path.join(project_dir, "data")
