@@ -294,7 +294,7 @@ class Ec2Inventory(object):
 
 
     def do_api_calls_update_cache(self):
-        ''' Do API calls to each region, and save data in cache files '''
+        ''' Do API calls to each region, and save toydata in cache files '''
 
         if self.route53_enabled:
             self.get_route53_records()
@@ -697,7 +697,7 @@ class Ec2Inventory(object):
 
 
     def write_to_cache(self, data, filename):
-        ''' Writes data in JSON format to a file '''
+        ''' Writes toydata in JSON format to a file '''
 
         json_data = self.json_format_dict(data, True)
         cache = open(filename, 'w')

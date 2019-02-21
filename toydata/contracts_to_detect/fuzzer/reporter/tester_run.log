@@ -1,0 +1,30 @@
+/usr/local/share/.config/yarn/global/node_modules/babel-core/lib/transformation/file/options/option-manager.js:328
+        throw e;
+        ^
+
+Error: Cannot find module 'babel-helper-remap-async-to-generator' (While processing preset: "/ContractFuzzer/contract_tester/node_modules/babel-preset-es2017/lib/index.js")
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:548:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:475:25)
+    at Module.require (internal/modules/cjs/loader.js:598:17)
+    at require (internal/modules/cjs/helpers.js:11:18)
+    at Object.<anonymous> (/ContractFuzzer/contract_tester/node_modules/babel-plugin-transform-async-to-generator/lib/index.js:21:41)
+    at Module._compile (internal/modules/cjs/loader.js:654:30)
+    at Module._extensions..js (internal/modules/cjs/loader.js:665:10)
+    at Object.require.extensions.(anonymous function) [as .js] (/usr/local/share/.config/yarn/global/node_modules/babel-register/lib/node.js:152:7)
+    at Module.load (internal/modules/cjs/loader.js:566:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)
+/usr/local/share/.config/yarn/global/node_modules/babel-core/lib/transformation/file/options/option-manager.js:328
+        throw e;
+        ^
+
+Error: Cannot find module 'babel-helper-remap-async-to-generator' (While processing preset: "/ContractFuzzer/contract_tester/node_modules/babel-preset-es2017/lib/index.js")
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:548:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:475:25)
+    at Module.require (internal/modules/cjs/loader.js:598:17)
+    at require (internal/modules/cjs/helpers.js:11:18)
+    at Object.<anonymous> (/ContractFuzzer/contract_tester/node_modules/babel-plugin-transform-async-to-generator/lib/index.js:21:41)
+    at Module._compile (internal/modules/cjs/loader.js:654:30)
+    at Module._extensions..js (internal/modules/cjs/loader.js:665:10)
+    at Object.require.extensions.(anonymous function) [as .js] (/usr/local/share/.config/yarn/global/node_modules/babel-register/lib/node.js:152:7)
+    at Module.load (internal/modules/cjs/loader.js:566:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# A script to upload random data to a swarm cluster.
+# A script to upload random toydata to a swarm cluster.
 #
 # Example:
 #

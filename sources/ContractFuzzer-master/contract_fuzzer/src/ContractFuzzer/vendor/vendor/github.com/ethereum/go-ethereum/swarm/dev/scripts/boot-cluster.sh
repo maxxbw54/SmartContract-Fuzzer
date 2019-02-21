@@ -4,7 +4,7 @@
 # container started with swarm/dev/run.sh).
 #
 # The cluster contains a bootnode, a geth node and multiple swarm nodes, with
-# each node having its own data directory in a base directory passed with the
+# each node having its own toydata directory in a base directory passed with the
 # --dir flag (default is swarm/dev/cluster).
 #
 # To avoid using different ports for each node and to make networking more
@@ -20,7 +20,7 @@ set -e
 ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
 source "${ROOT}/swarm/dev/scripts/util.sh"
 
-# DEFAULT_BASE_DIR is the default base directory to store node data
+# DEFAULT_BASE_DIR is the default base directory to store node toydata
 DEFAULT_BASE_DIR="${ROOT}/swarm/dev/cluster"
 
 # DEFAULT_CLUSTER_SIZE is the default swarm cluster size

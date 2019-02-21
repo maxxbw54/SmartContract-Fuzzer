@@ -48,7 +48,7 @@
 # (use of $ in variable names is a gcc extension).  The hardest
 # part about preparing this file is figuring out which headers to
 # include and which symbols need to be #defined to get the
-# actual data structures that pass through to the kernel system calls.
+# actual toydata structures that pass through to the kernel system calls.
 # Some C libraries present alternate versions for binary compatibility
 # and translate them on the way in and out of system calls, but
 # there is almost always a #define that can get the real ones.
