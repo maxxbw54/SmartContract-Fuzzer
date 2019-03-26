@@ -27,8 +27,8 @@
 
 	3. modify file `deployer_run.sh` as below,
 
-	```#!/bin/sh
-	cd contract_deployer && babel-node ./utils/deploy-main.js```
+	```#!/bin/sh ```
+	``` cd contract_deployer && babel-node ./utils/deploy-main.js```
 
 	4. ```docker build -f deploy.Dockerfile -t contractfuzzer/deployer .```
 
